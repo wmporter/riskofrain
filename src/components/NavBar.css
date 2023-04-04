@@ -1,0 +1,18 @@
+.navBar {
+    position:static;
+    display:inline-flex;
+    padding: 2rem;
+}
+
+.navLink{
+    border-style: dashed;
+    border-radius:20px;
+    border-color:#29296e;
+    font-size: 1.5em;
+    padding:2em;
+    color:white;
+}
+
+.navLink:hover {
+    border-color:grey;
+}
