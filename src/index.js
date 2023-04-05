@@ -6,18 +6,40 @@ import ContactForm from './components/Contact/ContactForm';
 import Tips from './components/Tips/Tips';
 import About from './components/About/About';
 import 'tachyons';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <BrowserRouter basename='/riskofrain'>
-        <Routes>
-            <Route path="/tips" element={<Tips/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/contact" element={<ContactForm/>} />
-            <Route path="/" element={<App/>} />
+const router = createBrowserRouter([
+    {
+      path: "/riskofrain",
+      element: <App />,
+      children: [
+        {
+          path: "tips",
+          element: <Tips />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "contact",
+          element: <ContactForm />,
+        },
+      ],
+    },
+  ]);
+// root.render(
+//     <BrowserRouter basename='/riskofrain'>
+//         <Routes>
+//             <Route path="/tips" element={<Tips/>} />
+//             <Route path="/about" element={<About/>} />
+//             <Route path="/contact" element={<ContactForm/>} />
+//             <Route path="/" element={<App/>} />
             
-        </Routes>
-    </BrowserRouter>
+//         </Routes>
+//     </BrowserRouter>
+// );
+root.render(
+    <RouterProvider router={router} />
 );
-
