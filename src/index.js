@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter basename='/risk-of-rain-two-item-index'>
+    <BrowserRouter basename='/riskofrain'>
         <Routes>
             <Route path="/tips" element={<Tips/>} />
             <Route path="/about" element={<About/>} />
