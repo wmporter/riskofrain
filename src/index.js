@@ -9,37 +9,24 @@ import 'tachyons';
 import { createBrowserRouter, RouterProvider, BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const router = createBrowserRouter([
-    {
-      path: "/riskofrain",
-      element: <App />,
-      children: [
-        {
-          path: "tips",
-          element: <Tips />,
-        },
-        {
-          path: "about",
-          element: <About />,
-        },
-        {
-          path: "contact",
-          element: <ContactForm />,
-        },
-      ],
-    },
-  ]);
-// root.render(
-//     <BrowserRouter basename='/riskofrain'>
-//         <Routes>
-//             <Route path="/tips" element={<Tips/>} />
-//             <Route path="/about" element={<About/>} />
-//             <Route path="/contact" element={<ContactForm/>} />
-//             <Route path="/" element={<App/>} />
-            
-//         </Routes>
-//     </BrowserRouter>
-// );
+// const router = createBrowserRouter([
+//     {
+//       path: "/",
+//       basename: "/riskofrain/",
+//       element: <App />,
+//     },
+//   ]);
 root.render(
-    <RouterProvider router={router} />
+    <BrowserRouter basename='/riskofrain'>
+        <Routes>
+            <Route path="/tips" element={<Tips/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/contact" element={<ContactForm/>} />
+            <Route index element={<App/>} />
+            
+        </Routes>
+    </BrowserRouter>
 );
+// root.render(
+//     <RouterProvider router={router} />
+// );
