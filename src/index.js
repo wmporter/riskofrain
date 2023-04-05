@@ -6,16 +6,10 @@ import ContactForm from './components/Contact/ContactForm';
 import Tips from './components/Tips/Tips';
 import About from './components/About/About';
 import 'tachyons';
-import { createBrowserRouter, RouterProvider, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// const router = createBrowserRouter([
-//     {
-//       path: "/",
-//       basename: "/riskofrain/",
-//       element: <App />,
-//     },
-//   ]);
+
 root.render(
     <BrowserRouter basename='/riskofrain'>
         <Routes>
@@ -27,6 +21,3 @@ root.render(
         </Routes>
     </BrowserRouter>
 );
-// root.render(
-//     <RouterProvider router={router} />
-// );
